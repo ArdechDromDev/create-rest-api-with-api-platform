@@ -3,10 +3,16 @@ imports:
     - { resource: security.yml }
     - { resource: services.yml }
 
+    - { resource: api/api_platform.yml }
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en
+
+sensio_framework_extra:
+    request:
+        converters: true
+        auto_convert: true
 
 framework:
     #esi: ~
