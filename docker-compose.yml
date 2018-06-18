@@ -1,0 +1,36 @@
+version: '3'
+services:
+    nginx:
+        build: docker/services/nginx
+        links:
+            - fpm
+        volumes:
+            - ./:/var/www/html
+        ports:
+            - "80:80"
+    fpm:
+        build:
+            context: docker/services/fpm
+            args:
+                USER_NAME: ${USER_NAME}
+                USER_GROUP: ${USER_GROUP}
+                USER_UID: ${USER_UID}
+                USER_GID: ${USER_GID}
+        expose:
+            - "9000"
+        volumes:
+            - ./:/var/www/html
+        links:
+            - database
+        env_file:
+            - .env
+    database:
+        image: "mariadb:10.2"
+        expose:
+            - "3306"
+        ports:
+            - "3306:3306"
+        volumes:
+            - ./docker/data/db:/var/lib/mysql
+        env_file:
+            - .env

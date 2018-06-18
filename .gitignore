@@ -1,0 +1,19 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea
+.env
+docker/data/
+vendor/
+composer.lock
+phpunit.xml
+.php_cs.cache
+composer.phar
+package.tar
+/packages.json
+/.phpunit
+/var/cache/
+/var/log/
+/var/sessions/
+/node_modules/
+/web/bundles/
+/var/logs/
+/var/jwt/

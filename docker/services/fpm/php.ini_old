@@ -1,0 +1,36 @@
+; Maximum execution time of each script, in seconds
+; http://php.net/max-execution-time
+; Note: This directive is hardcoded to 0 for the CLI SAPI
+max_execution_time = 60
+
+; Whether to allow the treatment of URLs (like http:// or ftp://) as files.
+; http://php.net/allow-url-fopen
+allow_url_fopen = On
+
+; Whether to allow include/require to open URLs (like http:// or ftp://) as files.
+; http://php.net/allow-url-include
+allow_url_include = Off
+
+register_globals = Off
+magic_quotes_gpc = Off
+
+; Defines the default timezone used by the date functions
+; http://php.net/date.timezone
+;date.timezone = "Europe/Paris"
+date.timezone = "UTC"
+
+; Maximum allowed size for uploaded files.
+; http://php.net/upload-max-filesize
+upload_max_filesize = 32M
+
+; where MODE is the octal representation of the mode. Note that this
+; does not overwrite the process's umask.
+; http://php.net/session.save-path
+session.save_path = "/tmp"
+
+; For Unix only.  You may supply arguments as well (default: "sendmail -t -i").
+; http://php.net/sendmail-path
+sendmail_path = /usr/sbin/sendmail -t -i
+
+; Add X-PHP-Originating-Script: that will include uid of the script followed by the filename
+mail.add_x_header = On
