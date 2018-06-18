@@ -5,7 +5,7 @@ services:
         links:
             - fpm
         volumes:
-            - ./:/var/www/html
+            - ./:/var/www/html:cached
         ports:
             - "80:80"
     fpm:
@@ -19,7 +19,7 @@ services:
         expose:
             - "9000"
         volumes:
-            - ./:/var/www/html
+            - ./:/var/www/html:cached
         links:
             - database
         env_file:
@@ -31,6 +31,6 @@ services:
         ports:
             - "3306:3306"
         volumes:
-            - ./docker/data/db:/var/lib/mysql
+            - ./docker/data/db:/var/lib/mysql:cached
         env_file:
             - .env
